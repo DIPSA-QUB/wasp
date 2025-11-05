@@ -4,3 +4,8 @@ create_typed_target(hist-degree hist-degree.cc)
 create_typed_target(sources sources.cc)
 create_typed_target(weights weights.cc)
 create_typed_target(check-weight check-weight.cc)
+
+find_package(TBB REQUIRED)
+
+target_link_libraries(hist-weight-float PRIVATE TBB::tbb)
+target_link_libraries(hist-weight-int32 PRIVATE TBB::tbb)

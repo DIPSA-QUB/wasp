@@ -320,20 +320,6 @@ public:
   std::string out_filename() const { return out_filename_; }
 };
 
-class CLStats : public CLBase {
-protected:
-  std::string out_directory_;
-
-public:
-  explicit CLStats(int argc, char** argv, std::string name)
-      : CLBase(argc, argv, name) {
-    app_.add_option("-d,--output-directory", out_directory_, "Output directory")
-        ->required();
-  }
-
-  std::string out_directory() const { return out_directory_; }
-};
-
 class CLEdge : public CLBase {
 protected:
   std::int32_t src, dst;
